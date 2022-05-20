@@ -10,5 +10,6 @@ declare global {
      id: number,
      columnId: number;
      name: string;
+     minutes: number;
    }
 }

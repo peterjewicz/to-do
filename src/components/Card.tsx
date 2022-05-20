@@ -22,6 +22,7 @@ const Card = ({ card }: CardProps) => {
   return (
     <div className="border" ref={drag}>
       <h3>{ card.name }</h3>
+      <p>Time { card.minutes }</p>
     </div>
   )
 }
