@@ -11,6 +11,7 @@ interface ColumnProps {
 }
 
 const calcTotalTime = (cards: Card[]): number => {
+  console.log(cards)
   return cards.reduce((acc: number, card: Card) => acc + card.minutes, 0);
 }
 

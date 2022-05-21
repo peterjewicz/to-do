@@ -13,7 +13,7 @@ interface MoveBoardAction {
 
 // Define the initial state using that type
 const initialState: CardState = {
-  cards: [{id: 1, columnId: 1, name: "do it", minutes: 50}, {id: 2, columnId: 2, name: "do it22", minutes: 15}, {id: 3, columnId: 2, name: "do itasdas", minutes: 60}, {id: 4, columnId: 3, name: "do itdds", minutes: 10}]
+  cards: []
 }
 
 export const cardSlice = createSlice({
@@ -21,8 +21,11 @@ export const cardSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    add: (state) => {
-      state.cards.push({id: 5, columnId: 1, name: "new", minutes: 5});
+    set: (state, action: PayloadAction<Card[]>) => {
+      state.cards = (action.payload);
+    },
+    add: (state, action: PayloadAction<Card>) => {
+      state.cards.push(action.payload);
     },
     remove: (state) => {
       state.cards.pop();
@@ -41,7 +44,7 @@ export const cardSlice = createSlice({
   },
 })
 
-export const { add, remove, moveBoard } = cardSlice.actions
+export const { add, remove, moveBoard, set } = cardSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const cardValue = (state: RootState) => state.cards
