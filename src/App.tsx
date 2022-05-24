@@ -54,7 +54,7 @@ function App() {
       <AddTask />
       <div className="flex">
         {columns.map((column: Column) => {
-          const columnCards = cards.filter((card: Card) => card.columnId === column.id)
+          const columnCards = cards.filter((card: Card) => card.date === column.name)
           return (
             <Column column={column} cards={columnCards}/>
           )

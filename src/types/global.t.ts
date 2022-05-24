@@ -8,7 +8,7 @@ declare global {
 
    interface Card {
      id: number,
-     columnId: number;
+     date: string;
      name: string;
      minutes: number;
    }

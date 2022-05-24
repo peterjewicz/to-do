@@ -8,7 +8,7 @@ interface CardState {
 
 interface MoveBoardAction {
   cardId: number;
-  columnId: number;
+  columnId: string;
 }
 
 // Define the initial state using that type
@@ -35,7 +35,7 @@ export const cardSlice = createSlice({
       state.cards.map((card: Card) => {
         if (card.id === action.payload.cardId) {
           // return {...card, columnId: action.payload.columnId};
-          return card.columnId = action.payload.columnId;
+          return card.date = action.payload.columnId;
         } else {
           return card;
         }

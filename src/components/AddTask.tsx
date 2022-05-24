@@ -16,7 +16,7 @@ const AddTask = () => {
       },
       method: "post",
       mode: 'cors',
-      body: JSON.stringify({name: name, minutes: minutes, columnId: 1})
+      body: JSON.stringify({name: name, minutes: minutes, date: "5/23/2022"})
     })
     .then(function(response) {
       return response.json()

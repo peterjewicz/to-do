@@ -11,7 +11,6 @@ interface ColumnProps {
 }
 
 const calcTotalTime = (cards: Card[]): number => {
-  console.log(cards)
   return cards.reduce((acc: number, card: Card) => acc + card.minutes, 0);
 }
 
@@ -28,7 +27,7 @@ const Column = ({column, cards}: ColumnProps) => {
   const [, drop] = useDrop({
       accept: ItemTypes.CARD,
       drop: (card: Card) =>  {
-        dispatch((moveBoard({cardId: card.id, columnId: column.id})))
+        dispatch((moveBoard({cardId: card.id, columnId: column.name})))
       }
   })
 

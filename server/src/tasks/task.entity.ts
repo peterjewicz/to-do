@@ -12,5 +12,5 @@ export class Task {
   minutes: number;
 
   @Column()
-  columnId: number;
+  date: string;
 }
